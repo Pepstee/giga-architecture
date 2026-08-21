@@ -13,13 +13,16 @@ runtime continuity, and governed adapters to independently owned work systems.
    decomposes that map into independently useful implementation slices with prerequisites,
    verification gates, rollback rules and restart instructions.
 
-## Complete architecture flowchart
+## Architecture at a glance
 
-[Open the scalable SVG](diagrams/JARVIS_SOVEREIGN_RUNTIME_WALLPAPER.svg) ·
-[open the high-resolution PNG](diagrams/JARVIS_SOVEREIGN_RUNTIME_WALLPAPER.png) ·
-[inspect the Mermaid source](diagrams/JARVIS_SOVEREIGN_RUNTIME_WALLPAPER.mmd)
+[Open the scalable SVG](diagrams/JARVIS_SOVEREIGN_RUNTIME_SYSTEM_CONTEXT.svg) ·
+[open the high-resolution PNG](diagrams/JARVIS_SOVEREIGN_RUNTIME_SYSTEM_CONTEXT.png) ·
+[inspect the Mermaid source](diagrams/JARVIS_SOVEREIGN_RUNTIME_SYSTEM_CONTEXT.mmd)
 
-![Complete GIGA and Jarvis sovereign-runtime architecture flowchart](diagrams/JARVIS_SOVEREIGN_RUNTIME_WALLPAPER.svg)
+Read the arrows from the operator and context sources into Jarvis, through deterministic policy and
+typed adapters, then back from domain receipts into the work ledger and personal-profile loop.
+
+![GIGA and Jarvis system-context flowchart](diagrams/JARVIS_SOVEREIGN_RUNTIME_SYSTEM_CONTEXT.svg)
 
 ## Scope and authority
 
