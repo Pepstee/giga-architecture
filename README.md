@@ -15,14 +15,13 @@ runtime continuity, and governed adapters to independently owned work systems.
 
 ## Architecture at a glance
 
-[Open the scalable SVG](diagrams/JARVIS_SOVEREIGN_RUNTIME_SYSTEM_CONTEXT.svg) ·
-[open the high-resolution PNG](diagrams/JARVIS_SOVEREIGN_RUNTIME_SYSTEM_CONTEXT.png) ·
-[inspect the Mermaid source](diagrams/JARVIS_SOVEREIGN_RUNTIME_SYSTEM_CONTEXT.mmd)
+GitHub renders the canonical Mermaid code directly inside the architecture document:
 
-Read the arrows from the operator and context sources into Jarvis, through deterministic policy and
-typed adapters, then back from domain receipts into the work ledger and personal-profile loop.
+- [Simple system-context flowchart](docs/11_JARVIS_SOVEREIGN_RUNTIME_PROPOSED_ARCHITECTURE.md#3-system-context)
+- [Detailed end-state operational flow](docs/11_JARVIS_SOVEREIGN_RUNTIME_PROPOSED_ARCHITECTURE.md#31-end-state-operational-flow)
 
-![GIGA and Jarvis system-context flowchart](diagrams/JARVIS_SOVEREIGN_RUNTIME_SYSTEM_CONTEXT.svg)
+There are no separately generated image files or duplicate diagram sources to drift from the
+architecture.
 
 ## Scope and authority
 
