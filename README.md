@@ -15,6 +15,14 @@ The digital twin is one payload/module within this architecture. It is not the a
    decomposes that map into independently useful implementation slices with prerequisites,
    verification gates, rollback rules and restart instructions.
 
+## Complete architecture flowchart
+
+[Open the scalable SVG](diagrams/JARVIS_SOVEREIGN_RUNTIME_WALLPAPER.svg) ·
+[open the high-resolution PNG](diagrams/JARVIS_SOVEREIGN_RUNTIME_WALLPAPER.png) ·
+[inspect the Mermaid source](diagrams/JARVIS_SOVEREIGN_RUNTIME_WALLPAPER.mmd)
+
+![Complete GIGA and Jarvis sovereign-runtime architecture flowchart](diagrams/JARVIS_SOVEREIGN_RUNTIME_WALLPAPER.svg)
+
 ## Scope and authority
 
 This repository contains explanations and planning material only. It contains no runtime
@@ -25,4 +33,3 @@ of authority. The documents retain their own proposal and ratification status.
 
 - Proposed architecture SHA-256: `fc65e8221416178eb3c7ef2801b4e631269853926a648683648dc7cc293dc245`
 - Implementation blueprint SHA-256: `eebb08490dcba120f793f4a5c513a71accefa0d4871c2b05f24d8d1d6a3ae6a8`
-
