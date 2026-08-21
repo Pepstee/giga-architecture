@@ -72,9 +72,7 @@ flowchart TB
 
 ## Scope and authority
 
-This repository contains explanations and planning material only. It contains no runtime
-implementation, Personal Vault contents, credentials, work state, deployment activation, or grant
-of authority. The documents retain their own proposal and ratification status.
+This repository contains explanations and planning material only.
 
 ## Canonical source identities
 
