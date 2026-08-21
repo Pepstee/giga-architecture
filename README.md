@@ -5,8 +5,6 @@ whole system: Jarvis as the persistent engine, the optional Personal Vault and d
 payload, deterministic policy enforcement, routing, evidence and memory, autonomous initiative,
 runtime continuity, and governed adapters to independently owned work systems.
 
-The digital twin is one payload/module within this architecture. It is not the architecture itself.
-
 ## Documents
 
 1. [`11_JARVIS_SOVEREIGN_RUNTIME_PROPOSED_ARCHITECTURE.md`](docs/11_JARVIS_SOVEREIGN_RUNTIME_PROPOSED_ARCHITECTURE.md)
