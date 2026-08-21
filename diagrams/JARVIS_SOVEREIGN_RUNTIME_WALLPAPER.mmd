@@ -1,0 +1,201 @@
+---
+config:
+  theme: dark
+  look: classic
+  flowchart:
+    htmlLabels: true
+    curve: linear
+    nodeSpacing: 22
+    rankSpacing: 34
+    diagramPadding: 8
+  themeVariables:
+    fontFamily: "Inter, Avenir Next, Arial, sans-serif"
+    fontSize: "24px"
+    background: "#050914"
+    primaryTextColor: "#F8FAFC"
+    lineColor: "#64748B"
+    clusterBkg: "#0B1220"
+    clusterBorder: "#334155"
+  themeCSS: |
+    .cluster-label text, .cluster-label span { font-size: 29px !important; font-weight: 750 !important; }
+    .edgeLabel, .edgeLabel span { font-size: 18px !important; }
+    .nodeLabel { line-height: 1.18; }
+---
+%% A wallpaper projection of the canonical target architecture in
+%% 11_JARVIS_SOVEREIGN_RUNTIME_PROPOSED_ARCHITECTURE.md. The canonical document
+%% owns architectural truth; this source folds the same depth into a 16:10 study map.
+flowchart LR
+
+    subgraph TOP["READ TOP ROW LEFT → RIGHT: AUTHORITY + CONTEXT → JARVIS ENGINE"]
+        direction LR
+
+        subgraph INPUTS["1 · AUTHORITY · MODES · CONTEXT"]
+            direction TB
+
+            subgraph OPERATOR["AUTHORITY AND OPERATING MODE"]
+                direction LR
+                O["ARTIOM<br/>authority root · goals<br/>Constitution · delegation · STOP"]
+                MODE{"MODE"}
+                MAN["MANUAL<br/>Jarvis off / observe-only<br/>Artiom acts directly"]
+                FACE["FACELESS AUTONOMY<br/>Vault unmounted<br/>default reasoning + work context"]
+                TWINMODE["TWIN AUTONOMY<br/>Vault mounted<br/>personal context + twin pack"]
+                O --> MODE
+                MODE --> MAN
+                MODE --> FACE
+                MODE --> TWINMODE
+            end
+
+            subgraph STIMULI["STIMULI — MORE THAN PROMPTS"]
+                direction LR
+                CMD["Operator command"]
+                EXT["Schedule · deadline · dependency<br/>email · calendar · message · domain event"]
+                HEALTH["Health · failure · recovery · drift"]
+                SELF["Self-initiated intent<br/>goal + evidence + why_now + value/risk"]
+            end
+
+            subgraph CONTEXTS["CONTEXT SOURCES — DATA IS NOT AUTHORITY"]
+                direction LR
+
+                subgraph OPS["OPERATIONAL COMPARTMENTS · FACELESS-AVAILABLE"]
+                    direction TB
+                    EM["Email"]
+                    CAL["Calendar"]
+                    MSG["Messages + social"]
+                    PROJ["Projects + platform state"]
+                    SCOPE["Each keeps its own<br/>scope · retention · integrity · canonical owner"]
+                    EM --> SCOPE
+                    CAL --> SCOPE
+                    MSG --> SCOPE
+                    PROJ --> SCOPE
+                end
+
+                subgraph VAULT["PERSONAL VAULT · ENCRYPTED · AUTHORISED LAPTOPS"]
+                    direction TB
+                    RAW["Immutable raw exports<br/>source evidence + hashes"]
+                    ORD["Authenticated append-only ledger<br/>literal remember-this orders"]
+                    VC["Single-writer Vault compiler<br/>provenance · temporal validation<br/>corroboration · review · supersession"]
+                    MEM["Canonical memory<br/>LOW CONFIDENCE · INFERRED · CERTAIN<br/>store source class + confidence + review state"]
+                    PPP["Canonical Personal Professional Profile"]
+                    BP["Behaviour · preferences · relationships<br/>evidence-linked profiler"]
+                    TP["Promoted twin pack — optional payload<br/>voice/style · preference · cognition artefacts<br/>decision history · locked evaluations · rollback baseline"]
+                    VB["Local Vault broker<br/>purpose-scoped context + audit"]
+
+                    RAW --> VC
+                    ORD --> VC
+                    VC --> MEM
+                    VC --> PPP
+                    MEM --> VB
+                    PPP --> VB
+                    BP --> VB
+                    TP --> VB
+                end
+            end
+
+            OPERATOR -->|"mode + bounded delegation"| STIMULI
+            STIMULI -->|"typed stimuli"| CONTEXTS
+        end
+
+        subgraph ENGINE["2 · JARVIS ENGINE · JLM L0–L6"]
+            direction TB
+
+            subgraph FOUNDATION["DETERMINISTIC FOUNDATION · L0–L3"]
+                direction TB
+                L0["L0 HOST + CONTINUITY<br/>supervisor · heartbeat<br/>disk/clock/network/thermal<br/>backup/restore · update/rollback"]
+                L1["L1 SIGNED PORTABLE RUNTIME<br/>Jarvis code · schemas · policy compiler<br/>capability registry · pinned environment"]
+                L2["L2 IDENTITY + SECRETS + LEADERSHIP<br/>device identity · credential references · STOP<br/>single writer lease + fencing token"]
+                L3[("L3 APPEND-ONLY WORK LEDGER<br/>goals · plans · tasks · stimuli · attempts<br/>decisions · actions · receipts · outcomes · checkpoints")]
+                L0 --> L1 --> L2 --> L3
+            end
+
+            subgraph PROCESSING["OFFICIAL PROCESSING PATH · L4–L6"]
+                direction TB
+                INIT["L5 INITIATIVE ENGINE<br/>goal + evidence + why_now<br/>value · risk · urgency · budget"]
+                ING["L5 AUTHENTICATED INGRESS<br/>normalise stimulus<br/>preserve untrusted source<br/>exact rules first"]
+                RT["L5 ROUTER<br/>intent + domain<br/>context scopes · model roles<br/>candidate capabilities<br/>NEVER authority"]
+                CB["L4 CONTEXT BROKER<br/>least-context packet<br/>scope · purpose · time-validity<br/>provenance · mode · hash"]
+                LLM["L6 COGNITION<br/>classifier · planner · reasoner · independent critic<br/>extractor · identity renderer · locked judge<br/>probabilistic inside deterministic envelopes<br/>TYPED PROPOSALS — NO PRIVILEGED TOOLS"]
+                INIT --> ING --> RT --> CB --> LLM
+            end
+
+            FOUNDATION -->|"durable state drives initiative;<br/>runtime + identity gate ingress"| PROCESSING
+        end
+
+        INPUTS -->|"commands/events → L5 ingress<br/>operational/Vault context → L4 broker<br/>promoted twin artefacts → L6"| ENGINE
+    end
+
+    subgraph BOTTOM["READ BOTTOM ROW LEFT → RIGHT: POLICY → ACTION → PROOF → LEARNING · THEN LOOP BACK"]
+        direction LR
+
+        subgraph AUTHORITY["3 · DETERMINISTIC AUTHORITY + EXECUTION · L7–L8"]
+            direction TB
+            POL["CONSTITUTIONAL CONTROL PLANE<br/>signed policy · delegation · capability registry<br/>mode · data scope · budgets · representation · STOP<br/>Jarvis cannot create, widen, approve, or bypass authority"]
+            K{"L7 CONSTITUTION KERNEL<br/>policy · identity · mode · scope · budget<br/>freshness · reversibility · expected receipt"}
+            DEC["CLOSED DECISION<br/>DETERMINISTIC · PROPOSAL-ONLY<br/>REPLAY · REFUSE"]
+            EX["L8 TYPED CAPABILITY ADAPTERS<br/>prepare · execute/query · cancel<br/>reconcile · rollback · commit"]
+            DENY["REFUSE · WAIT · ESCALATE<br/>stable reason codes; never silent"]
+
+            POL --> K --> DEC
+            DEC -->|"admit"| EX
+            DEC -->|"refuse"| DENY
+        end
+
+        subgraph OUTCOMES["4 · DOMAINS · EXTERNAL PROOF · LEARNING · L8–L9"]
+            direction TB
+
+            subgraph DOMAINS["INDEPENDENT DOMAIN OWNERSHIP REMAINS INTACT"]
+                direction LR
+                ORC["ORCHESTRATOR-v3<br/>controller + built-in Overseer<br/>candidate-bound certificate"]
+                MA["MARKET ALIGNER<br/>collect · analyse · process<br/>own profiler + internal JAA"]
+                DS["DUBBING STUDIO<br/>bounded jobs + cancellation"]
+                OTHER["OTHER REGISTERED SYSTEMS<br/>typed adapters only"]
+                CH["COMMUNICATION + ONLINE IDENTITY<br/>representation = capability family"]
+            end
+
+            RCPT["EXTERNAL PROOF<br/>receipts · certificates · delivery · downstream outcomes<br/>NEVER process-exit or model assertion alone"]
+            L9["L9 REPRESENTATION + OUTCOME EVALUATION + LEARNING<br/>channel audit · utility · repair cost · identity drift<br/>decision fidelity · initiative quality · longitudinal consistency<br/>work outcomes → L3; personal proposals → Vault compiler"]
+
+            DOMAINS --> RCPT --> L9
+        end
+
+        subgraph CONTINUITY["5 · PORTABILITY · OBSERVABILITY · SIX-YEAR SURVIVAL"]
+            direction TB
+            OBS["EVIDENCE + OBSERVABILITY PLANE · EVERY LAYER L0–L9<br/>lineage · hashes · policy/model/context identities<br/>decisions · telemetry · receipts · replay · audit · drift"]
+            CLOUD["CLOUD / OBJECT TRANSPORT<br/>content-addressed signed runtime<br/>encrypted QUIESCENT work-state package<br/>NO device secrets · NO live DB · NO Personal Vault"]
+            HANDOFF["FENCED DEVICE HANDOFF<br/>quiesce → checkpoint → release lease → download<br/>verify → hydrate local secrets → optional Vault mount<br/>replay tests → acquire new lease → resume"]
+            MON["OWNER-INDEPENDENT HEARTBEAT MONITOR<br/>minimal health only · no Vault · no action authority<br/>offline / hung / monitor-failure alert"]
+            RULE["SYSTEM INVARIANT<br/>ROUTER CHOOSES · MODELS PROPOSE · KERNEL PERMITS<br/>ADAPTERS ACT · RECEIPTS PROVE · LEDGER REMEMBERS"]
+
+            OBS --> CLOUD --> HANDOFF --> MON --> RULE
+        end
+
+        AUTHORITY -->|"admitted capability request"| OUTCOMES
+        OUTCOMES -->|"receipts + evaluated outcomes"| CONTINUITY
+    end
+
+    TOP -->|"L6 typed proposal or deterministic candidate → L7<br/>Every transition carries request + policy + evidence identity"| BOTTOM
+    BOTTOM -.->|"outcomes → L3 ledger → new goal-linked initiative<br/>PPP projection ↔ Market Aligner evidence-linked proposals<br/>STOP and manual domain paths always remain"| TOP
+
+    %% COLOUR = SEMANTIC TYPE, NOT DECORATION
+    classDef operator fill:#F59E0B,stroke:#FDE68A,color:#111827,stroke-width:4px,font-weight:bold;
+    classDef mode fill:#172554,stroke:#60A5FA,color:#EFF6FF,stroke-width:3px;
+    classDef deterministic fill:#052E2B,stroke:#2DD4BF,color:#F0FDFA,stroke-width:3px;
+    classDef probabilistic fill:#3B0764,stroke:#C084FC,color:#FAF5FF,stroke-width:3px;
+    classDef vault fill:#3F0D1D,stroke:#FB7185,color:#FFF1F2,stroke-width:3px;
+    classDef context fill:#172033,stroke:#94A3B8,color:#F8FAFC,stroke-width:2px;
+    classDef domain fill:#3A2105,stroke:#FBBF24,color:#FFFBEB,stroke-width:3px;
+    classDef proof fill:#052E16,stroke:#4ADE80,color:#F0FDF4,stroke-width:3px;
+    classDef plane fill:#111827,stroke:#F43F5E,color:#FFF1F2,stroke-width:4px;
+    classDef warning fill:#450A0A,stroke:#EF4444,color:#FEF2F2,stroke-width:3px;
+
+    class O operator;
+    class MODE,MAN,FACE,TWINMODE mode;
+    class L0,L1,L2,L3,INIT,ING,RT,CB,K,DEC,EX deterministic;
+    class LLM,TP,L9 probabilistic;
+    class RAW,ORD,VC,MEM,PPP,BP,VB vault;
+    class CMD,EXT,HEALTH,SELF,EM,CAL,MSG,PROJ,SCOPE,CLOUD,HANDOFF,MON context;
+    class ORC,MA,DS,OTHER,CH domain;
+    class RCPT proof;
+    class POL,OBS,RULE plane;
+    class DENY warning;
+
+    linkStyle default stroke:#64748B,stroke-width:2px;
